@@ -10,23 +10,29 @@
 
     <main id="main">
 <section>
+
+
 <h1>Trending Articles</h1>
-
-<div class="flex-container">
-
-
-
-   <div class="flex-items">
-    <h3></h3>
-    <h3>subject</h3>
+<!-- DISPLAY FETCH DATA OF ARTICLES FROM MONGODB -->
+<% arrArticle.forEach(item => {%>
+  <div class="flex-container">
+   <div class="item-container ">
+    <h4  class="title"><%= item.title %></h4>
     <hr>
-<p> article </p>
-<a href="#">Read more</a>
+  
+<p class="subject"><%= item.subject.slice(0, 50) %></p>
+<a href="/index/<%=item._id%>"><span>Read more</span> </a>
+    
 
 </div>
-
+<% });%>
 </div>
+
+<!-- // using partials to route the webiste EJS  -->
 </section>
+
+
+
 <%- include('./partials/footer') %>
     </main>
   </body>
