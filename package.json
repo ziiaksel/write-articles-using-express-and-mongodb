@@ -11,29 +11,24 @@
     "start": "node app.js",
     "watch": "nodemon --ext js,ejs --ignore public"
   },
-  "name": "myapp",
+  "name": "artices-mongodb-expressjs",
   "description": "Website to write articles and register them inside mongoDB also fetch them on html page",
-
   "version": "1.0.0",
   "main": "app.js",
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ziiaksel/write-articles-using-express-and-mongodb.git",
-    "engines": {
+    "url": "git+https://github.com/ziiaksel/write-articles-using-express-and-mongodb.git"
+    ,"engines": {
       "node": "19.3.0"
       }
+      
+      
   },
-  "keywords": [
-    "mongodb",
-    "create",
-    "article"
-  ],
-  "author": "MZI",
+  "author": "mzi",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/ziiaksel/write-articles-using-express-and-mongodb/issues"
   },
   "homepage": "https://github.com/ziiaksel/write-articles-using-express-and-mongodb#readme"
-
 }
