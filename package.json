@@ -13,15 +13,16 @@
   },
   "name": "myapp",
   "description": "Website to write articles and register them inside mongoDB also fetch them on html page",
-  "engines": {
-    "node": "19.3.0"
-    },
+
   "version": "1.0.0",
   "main": "app.js",
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ziiaksel/write-articles-using-express-and-mongodb.git"
+    "url": "git+https://github.com/ziiaksel/write-articles-using-express-and-mongodb.git",
+    "engines": {
+      "node": "19.3.0"
+      }
   },
   "keywords": [
     "mongodb",
@@ -34,4 +35,5 @@
     "url": "https://github.com/ziiaksel/write-articles-using-express-and-mongodb/issues"
   },
   "homepage": "https://github.com/ziiaksel/write-articles-using-express-and-mongodb#readme"
+
 }

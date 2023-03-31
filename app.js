@@ -41,7 +41,7 @@ mongoose
   // checking connection or promise
   // if connection successed
   .then((result) => {
-    app.listen(process.env.PORT  || port, () => {
+    app.listen(process.env.PORT  || 3000, () => {
       console.log(`Example app listening at http://localhost:${port}`);
     });
   })
