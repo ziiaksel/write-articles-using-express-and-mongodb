@@ -6,25 +6,27 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 const userRoutes = require("./routes/allarticle");
 const helmet = require("helmet");
-
+app.use(helmet());
 
 
 // Middleware to parse form data
 app.use(express.urlencoded({ extended: true }));
 
-// autorefresh
-const path = require("path");
-const livereload = require("livereload");
-const liveReloadServer = livereload.createServer();
-liveReloadServer.watch(path.join(__dirname, "public"));
-const connectLivereload = require("connect-livereload");
-app.use(connectLivereload());
+//-------------------- autorefresh only when deploying-----------------------------------------
+// const path = require("path");
+// const livereload = require("livereload");
+// const liveReloadServer = livereload.createServer();
+// liveReloadServer.watch(path.join(__dirname, "public"));
+// const connectLivereload = require("connect-livereload");
+// app.use(connectLivereload());
 
-liveReloadServer.server.once("connection", () => {
-  setTimeout(() => {
-    liveReloadServer.refresh("/");
-  }, 100);
-});
+// liveReloadServer.server.once("connection", () => {
+//   setTimeout(() => {
+//     liveReloadServer.refresh("/");
+//   }, 100);
+// });
+// -------------------------------------------------------------------------------
+
 
 // mongoose link to database mongoDB
 const mongoose = require("mongoose");
@@ -39,8 +41,8 @@ mongoose
   // checking connection or promise
   // if connection successed
   .then((result) => {
-    app.listen(port, () => {
-      console.log(`Example app listening on port ${port}`);
+    app.listen(process.env.PORT  || port, () => {
+      console.log(`Example app listening at http://localhost:${port}`);
     });
   })
   // else if databse failed to connect console error
@@ -49,7 +51,7 @@ mongoose
   });
 
 // helmet secure expressjs
- app.use(helmet());
+
 // routes
 // redirect to index.ejs
 app.get("/", (req, res) => {

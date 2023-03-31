@@ -53,7 +53,7 @@ const fetch_article_details_get = async (req, res) => {
 // delete article func
 const delete_article_delete = async (req, res) => {
   try{
-    const id  = req.params.id;
+    const Id  = req.params.id;
     await Article.findByIdAndDelete(Id);
     res.json({ myindex : "/index"});
 

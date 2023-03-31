@@ -3,15 +3,11 @@ const router = express.Router();
 const allArticlesControler = require('../controllers/articleController')
 
 
-
-
-
 // ---------------Create a new article ---------------------
 // Set up route to handle form submissions
    router.post("/",allArticlesControler.create_article_post);
     
     // ------------------------------closer---------------
-    
     
     // ---------------------FETCH DATA INSIDE WEBSITE-------------------
       // fetching data into website from db using methode: find()

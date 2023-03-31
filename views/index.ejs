@@ -1,17 +1,15 @@
 <!DOCTYPE html>
 <html lang="ar">
   <%- include('./partials/head') %>
-  <body id="body"  >
-   
-<div id="mydiv">
 
+
+
+<body id="body"  >   
+<div id="mydiv">
   <%- include('./partials/header') %>
 </div>
-
-    <main id="main">
+  <main id="main">
 <section>
-
-
 <h1>Trending Articles</h1>
 <!-- DISPLAY FETCH DATA OF ARTICLES FROM MONGODB -->
 <% arrArticle.forEach(item => {%>
@@ -23,7 +21,6 @@
 <p class="subject"><%= item.subject.slice(0, 50) %></p>
 <a href="/index/<%=item._id%>"><span>Read more</span> </a>
     
-
 </div>
 <% });%>
 </div>

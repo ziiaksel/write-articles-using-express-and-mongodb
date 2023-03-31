@@ -26,16 +26,6 @@
 
 <%- include('./partials/footer') %>
     </main>
-    <script>
-      const deleteBtn = document.getElementsByClassName("myButton")[0].getAttribute("data-link");
-const dltBtn = document.getElementsByClassName("myButton")[0];
-dltBtn.addEventListener("click",(eo) => {
-  fetch(`/index/${deleteBtn}`,{method:'DELETE'})
-  .then((response) => response.json())
-  .then((data) =>  window.location.href = data.myindex)
-  .catch((err) => {  console.log(err)})
-})
 
-    </script>
   </body>
 </html>
